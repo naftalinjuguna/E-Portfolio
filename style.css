@@ -519,6 +519,9 @@ footer h6 {
 }
 
 @media (max-width: 768px) {
+  .containe r {
+    padding: 0 20px;
+  }
   .cards {
     display: grid;
     grid-template-columns: 2fr;
