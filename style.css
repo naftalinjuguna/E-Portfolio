@@ -519,12 +519,26 @@ footer h6 {
 }
 
 @media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 20px 0;
+  }
+  .cta-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .containe r {
     padding: 0 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .cards {
     display: grid;
-    grid-template-columns: 2fr;
+    grid-template-columns: 1fr;
     h5 {
       font-size: 0.9rem;
       text-align: center;
@@ -541,5 +555,8 @@ footer h6 {
     h5 {
       font-size: 14px;
     }
+  }
+  .form-btn {
+    width: 200px;
   }
 }
