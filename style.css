@@ -522,6 +522,7 @@ footer h6 {
   body {
     margin: 0;
     padding: 20px 0;
+    padding-bottom: 0;
   }
   .cta-btn {
     display: flex;
