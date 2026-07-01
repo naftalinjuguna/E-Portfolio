@@ -524,6 +524,9 @@ footer h6 {
     padding: 20px 0;
     padding-bottom: 0;
   }
+  .hero {
+    padding: 20px;
+  }
   .cta-btn {
     display: flex;
     flex-direction: column;
