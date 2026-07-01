@@ -30,7 +30,16 @@
           </div>
 
           <div class="cta-btn">
-            <button onclick="" class="btn-1">VIEW MY JOURNEY</button>
+            <button
+              onclick="
+                document
+                  .getElementById('media')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
+              class="btn-1"
+            >
+              VIEW MY JOURNEY
+            </button>
             <button
               onclick="
                 document
@@ -209,7 +218,23 @@
         <div class="section-header">
           <div>
             <div class="section-label">03 — Gallery</div>
-            <h2 class="section-title">Photos & Videos</h2>
+            <h2 class="section-heading">
+              Moments from my<br /><em style="color: rgb(111, 129, 111)"
+                >teaching & learning journey.</em
+              >
+            </h2>
+            <p
+              style="
+                font-family: &quot;Nunito&quot;;
+                font-size: 0.85rem;
+                color: var(--muted);
+                max-width: 38rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Snapshots of lessons, projects, practicum placements, and the
+              beautiful messiness of real classrooms.
+            </p>
           </div>
         </div>
 
@@ -353,8 +378,8 @@
       <div class="logo">Levy Katala 💠</div>
       <p>B. Ed. Student . Maseno University.</p>
       <p>Class of 2028</p>
-      <h6>Designed with care by <span>Naftali</span></h6>
-      <p>©️2026 . All reights reserved.</p>
+      <h6>Designed with care </h6>
+      <p>©️2026 . All rights reserved.</p>
     </footer>
 
     <script>
