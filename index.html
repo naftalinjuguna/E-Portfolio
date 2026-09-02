@@ -444,7 +444,7 @@
       formData.append('title', file.name); // Using filename as title metadata
 
       // Determine mapping endpoint based on file type
-      const endpoint = file.type.startsWith("image/") ? '/api/photos' : '/api/videos';
+      const endpoint = file.type.startsWith("image/") ? '/api/media/upload' : '/api/videos';
       const statusLabel = mediaItemElement.querySelector('.upload-status');
 
       try {
