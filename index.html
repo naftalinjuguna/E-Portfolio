@@ -380,7 +380,8 @@
         mediaItems.forEach(item => {
           // Build the absolute live URL pointing to your backend file endpoint
           // Example: https://onrender.com/api/media/1/file
-          const fileUrl = `${API_BASE_URL}/api/media/${item.id}/file`;
+          // const fileUrl = `${API_BASE_URL}/api/media/${item.id}/file`;
+          const fileUrl = item.filePath;
           const mediaCard = document.createElement("div");
           mediaCard.className = "media-item";
 
