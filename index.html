@@ -440,25 +440,27 @@
     // ─── BACKEND API NETWORK CALL ───
     async function uploadFileToBackend(file, mediaItemElement) {
       const formData = new FormData();
-      formData.append('file', file);
-      formData.append('title', file.name); // Using filename as title metadata
+      formData.append('file', file); // ⚠️ This matches your Java @RequestParam("file") exactly
 
-      // Determine mapping endpoint based on file type
-      const endpoint = file.type.startsWith("image/") ? '/api/media/upload' : '/api/videos';
+      // CHANGE THIS: Route both photos and videos to your real Spring Boot unified path
+      const endpoint = '/api/media/upload';
       const statusLabel = mediaItemElement.querySelector('.upload-status');
 
       try {
         const response = await fetch(`${API_BASE_URL}${endpoint}`, {
           method: 'POST',
-          body: formData // Browser configures 'multipart/form-data' boundary automatically
+          body: formData // Browser configures 'multipart/form-data' automatically
         });
 
         if (response.ok) {
           mediaItemElement.classList.remove('uploading');
           if (statusLabel) statusLabel.innerHTML = "✅ Live";
-          // Optional: If backend returns a remote database URL, you can swap it here:
-          // const resultData = await response.json();
-          // if(resultData.url) mediaItemElement.querySelector('img, video').src = resultData.url;
+
+          // OPTIONAL: Since your backend returns the saved Media object, 
+          // you can read its file path or ID here if needed:
+          const mediaObject = await response.json();
+          console.log("Saved media object details:", mediaObject);
+
         } else {
           throw new Error(`Server returned code ${response.status}`);
         }
@@ -471,6 +473,7 @@
         }
       }
     }
+
 
     // ─── REMOVE MEDIA ───
     function removeMedia(e, btn) {
